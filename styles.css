@@ -12,14 +12,14 @@
     --def-color: rgba(49, 49, 49);
     --thm-color: rgba(26, 39, 142);
     --lem-color: rgb(84, 0, 162);
-    --prop-color: rgb(0, 106, 42);
+    --prop-color: rgb(0, 135, 54);
     --cor-color:rgb(128, 24, 79);
     --rmk-color: rgb(39, 130, 183);
 
     --def-bkgd: rgba(49, 49, 49, 0.09);
     --thm-bkgd: rgba(26, 39, 142, 0.09);
     --lem-bkgd:  rgb(84, 0, 162, 0.09);
-    --prop-bkgd: rgb(0, 106, 42, 0.09);
+    --prop-bkgd: rgb(0, 135, 54, 0.09);
     --cor-bkgd: rgb(128, 24, 79, 0.09);
     --rmk-bkgd: rgb(39, 130, 183, 0.09);
 }
