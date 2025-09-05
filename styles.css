@@ -104,8 +104,9 @@
                          background: var(--prop-bkgd);
                        }
   .callout.corollary   { border-left-color: var(--cor-color); }
-  .callout.remark      { border-left-color: color-mix(in oklab, var(--ink) 30%, transparent); }
-  
+  .callout.remark      { border-left-color: var(--rmk-color); 
+                         background: var(--rmk-bkgd);
+                       }
   /* Collapsibles */
   .collapsible {
     border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
