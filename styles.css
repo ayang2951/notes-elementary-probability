@@ -11,17 +11,17 @@
 
     --def-color: rgba(49, 49, 49);
     --thm-color: rgba(26, 39, 142);
-    --lem-color: rgba(113, 0, 220);
-    --prop-color: rgb(0, 170, 68);
-    --cor-color:rgba(160, 0, 85);
-    --rmk-color: rgba(56, 135, 181);
+    --lem-color: rgb(84, 0, 162);
+    --prop-color: rgb(0, 80, 32);
+    --cor-color:rgb(128, 24, 79);
+    --rmk-color: rgb(39, 130, 183);
 
     --def-bkgd: rgba(49, 49, 49, 0.09);
     --thm-bkgd: rgba(26, 39, 142, 0.09);
-    --lem-bkgd:  rgba(113, 0, 220, 0.1);
-    --prop-bkgd: rgba(0, 170, 68, 0.12);
-    --cor-bkgd: rgba(160, 0, 85, 0.1);
-    --rmk-bkgd: rgba(56, 135, 181, 0.08);
+    --lem-bkgd:  rgb(84, 0, 162, 0.09);
+    --prop-bkgd: rgb(0, 80, 32, 0.09);
+    --cor-bkgd: rgb(128, 24, 79, 0.09);
+    --rmk-bkgd: rgb(39, 130, 183, 0.09);
 }
 
   html[data-theme="dark"]{
