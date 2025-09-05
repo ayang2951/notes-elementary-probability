@@ -85,12 +85,19 @@ function autoNumberCallouts(){
           counters[t]++;
           const num = `${secIdx}.${counters[t]}`;
           const label = c.querySelector('.label');
-          if(label) label.textContent = `${capitalize(t)} ${num}`;
+          if(label){
+            // Extract custom title (after colon, parentheses, or space)
+            const match = label.textContent.match(/^[A-Za-z]+\s*[:(]?\s*(.+)?/);
+            const customTitle = match && match[1] ? `: ${match[1].replace(/[()]/g,'').trim()}` : '';
+            label.textContent = `${capitalize(t)} ${num}${customTitle}`;
+          }
         }
       }
     });
   });
 }
+
+
 function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
 
 /* Theme toggle */
