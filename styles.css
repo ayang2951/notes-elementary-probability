@@ -3,6 +3,7 @@
     --side-pad: clamp(16px, 4vw, 40px);
 
     --accent: rgb(112, 112, 112);
+    --border: rgba(112, 112, 112, 0);
     --ink: #1b1b1b;
     --ink-faint: #606060;
     --bg: #ffffff;
@@ -85,7 +86,7 @@
   
   /* Callouts */
   .callout {
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--border);
     background: var(--box);
     padding: .85rem 1rem;
     border-radius: 6px;
