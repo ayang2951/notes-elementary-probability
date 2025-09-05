@@ -8,19 +8,19 @@
     --bg: #ffffff;
     --box: #ebebeb;
 
-    --def-color: #000000;
+    --def-color: #292929;
     --thm-color: #3b498b;
-    --lem-color: #e580ff;
-    --prop-color: #a1ffef;
-    --cor-color: #ff96be;
-    --rmk-color: #adffa4;
+    --lem-color: #e167ff;
+    --prop-color: #009111;
+    --cor-color: #ac0042;
+    --rmk-color: #00aec2;
 
-    --def-bkgd: #e1e1e1;
-    --thm-bkgd: #e9edff;
-    --lem-bkgd: #fbeaff;
-    --prop-bkgd: #e6fffb;
-    --cor-bkgd: #ffecf3;
-    --rmk-bkgd: #eeffec;
+    --def-bkgd: #e7e7e7;
+    --thm-bkgd: #96a4e1;
+    --lem-bkgd: #eeb5fb;
+    --prop-bkgd: #80d58a;
+    --cor-bkgd: #ffa0c4;
+    --rmk-bkgd: #8ff4ff;
 }
 
   html[data-theme="dark"]{
