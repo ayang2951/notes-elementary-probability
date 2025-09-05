@@ -16,10 +16,10 @@
     --cor-color:rgba(160, 0, 85);
     --rmk-color: rgba(56, 135, 181);
 
-    --def-bkgd: rgba(49, 49, 49, 0.097);
+    --def-bkgd: rgba(49, 49, 49, 0.05);
     --thm-bkgd: rgba(26, 39, 142, 0.139);
     --lem-bkgd:  rgba(113, 0, 220, 0.173);
-    --prop-bkgd: rgba(0, 170, 68, 0.194);
+    --prop-bkgd: rgba(0, 170, 68, 0.085);
     --cor-bkgd: rgba(160, 0, 85, 0.154);
     --rmk-bkgd: rgba(56, 135, 181, 0.208);
 }
