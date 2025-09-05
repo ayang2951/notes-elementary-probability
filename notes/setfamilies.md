@@ -33,7 +33,7 @@ prop text.
 remark text.
 </div>
 
-## π and λ Systems
+## π & λ Systems
 
 yay
 
