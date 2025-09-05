@@ -20,14 +20,7 @@ Fields are closed under finite unions and intersections.
 <details class="collapsible">
   <summary>Proof</summary>
   <div class="collapsible__content">
-    Step reasoning.
-
-    <details class="collapsible">
-      <summary>Sub-step A</summary>
-      <div class="collapsible__content">
-        Inner detail — works now.
-      </div>
-    </details>
+    proof.
 
   </div>
 </details>
@@ -42,9 +35,7 @@ remark text.
 
 ## π and λ Systems
 
-<div class="callout theorem"><span class="label">Theorem</span><br/>
-(Dynkin’s π–λ) If $\mathcal{D}$ is a λ-system containing a π-system $\mathcal{P}$, then $\sigma(\mathcal{P}) \subseteq \mathcal{D}$.
-</div>
+yay
 
 ### Equation numbering template
 
