@@ -7,21 +7,21 @@
     --ink: #1b1b1b;
     --ink-faint: #606060;
     --bg: #ffffff;
-    --box: #ebebeb00;
+    --box: rgba(238, 238, 238, 0);
 
-    --def-color: #404040;
-    --thm-color: #3b488b;
-    --lem-color: #e167ff;
-    --prop-color: #009111;
-    --cor-color: #ac0042;
-    --rmk-color: #00aec2;
+    --def-color: rgba(49, 49, 49);
+    --thm-color: rgba(26, 39, 142);
+    --lem-color: rgba(113, 0, 220);
+    --prop-color: rgb(0, 170, 68);
+    --cor-color:rgba(160, 0, 85);
+    --rmk-color: rgba(56, 135, 181);
 
-    --def-bkgd: #4040402f;
-    --thm-bkgd: #3b488b6d;
-    --lem-bkgd: #e167ff65;
-    --prop-bkgd: #0091114a;
-    --cor-bkgd: #ac004242;
-    --rmk-bkgd: #00afc23c;
+    --def-bkgd: rgba(49, 49, 49, 0.097);
+    --thm-bkgd: rgba(26, 39, 142, 0.139);
+    --lem-bkgd:  rgba(113, 0, 220, 0.173);
+    --prop-bkgd: rgba(0, 170, 68, 0.194);
+    --cor-bkgd: rgba(160, 0, 85, 0.154);
+    --rmk-bkgd: rgba(56, 135, 181, 0.208);
 }
 
   html[data-theme="dark"]{
@@ -97,7 +97,7 @@
                          background: var(--def-bkgd);
                        }
   .callout.theorem     { border-left-color: var(--thm-color); 
-                         background: var(--def-bkgd);
+                         background: var(--thm-bkgd);
                        }
   .callout.lemma       { border-left-color: var(--lem-color); }
   .callout.proposition { border-left-color: var(--prop-color); 
@@ -110,7 +110,7 @@
   .collapsible {
     border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
     border-radius:8px;
-    background: color-mix(in oklab, var(--box) 80%, transparent);
+    background: color-mix(in oklab, var(--box) 90%, transparent);
     margin: 1rem 0;
   }
   .collapsible summary {
