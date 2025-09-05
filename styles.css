@@ -1,0 +1,150 @@
+:root{
+    --max-w: 900px;
+    --side-pad: clamp(16px, 4vw, 40px);
+  
+    --accent: rgb(112, 112, 112);
+    --ink: #1b1b1b;
+    --ink-faint: #606060;
+    --bg: #efefef;
+    --box: #f1f1f1;
+  
+    --def-color: #000000;
+    --thm-color: #002aff;
+    --lem-color: #d940ff;
+    --prop-color: #00ffd5;
+    --cor-color: #ff0062;
+  }
+  
+  html[data-theme="dark"]{
+    --accent: #b5b5b5;
+    --ink: #c5c5c5;
+    --ink-faint: #b6b6b6;
+    --bg: #0e0f10;
+    --box: #161718;
+  
+    --def-color: #ffffff;
+    --thm-color: #88bfff;
+    --lem-color: #d779ff;
+    --prop-color: #81fff0;
+    --cor-color: #ff94d1;
+  }
+  
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: "EB Garamond", serif;
+    line-height:1.55;
+    font-size:18px;
+  }
+  
+  /* Header */
+  .site-header {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 3rem var(--side-pad) 1.25rem;
+  }
+  .site-head-inner { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; }
+  .title-block h1 { margin:0 0 .3rem; font-size: clamp(2rem, 3vw, 2.4rem); font-weight:600; }
+  .subtitle { margin:0; color:var(--ink-faint); font-style:italic; }
+  
+  #themeToggle {
+    background: color-mix(in oklab, var(--box) 85%, transparent);
+    border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
+    padding: .35rem .6rem;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  
+  /* Content */
+  #content {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 1rem var(--side-pad) 3rem;
+  }
+  #content h1,#content h2,#content h3 {
+    margin-top:2rem;
+    margin-bottom:.8rem;
+    line-height:1.2;
+  }
+  #content h1 {
+    font-size: clamp(1.9rem, 2.4vw, 2.2rem);
+    border-bottom:1px solid color-mix(in oklab, var(--ink) 20%, transparent);
+    padding-bottom:.4rem;
+  }
+  
+  /* Callouts */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--box);
+    padding: .85rem 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+  .callout .label { font-variant: small-caps; color:var(--ink-faint); font-weight:700; }
+  .callout.definition  { border-left-color: var(--def-color); }
+  .callout.theorem     { border-left-color: var(--thm-color); }
+  .callout.lemma       { border-left-color: var(--lem-color); }
+  .callout.proposition { border-left-color: var(--prop-color); }
+  .callout.corollary   { border-left-color: var(--cor-color); }
+  .callout.remark      { border-left-color: color-mix(in oklab, var(--ink) 30%, transparent); }
+  
+  /* Collapsibles */
+  .collapsible {
+    border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
+    border-radius:8px;
+    background: color-mix(in oklab, var(--box) 80%, transparent);
+    margin: 1rem 0;
+  }
+  .collapsible summary {
+    cursor:pointer;
+    list-style:none;
+    padding:.75rem 1rem;
+    display:flex; align-items:center; gap:.5rem;
+    font-weight:700;
+  }
+  .collapsible summary::-webkit-details-marker { display:none; }
+  .collapsible summary::before {
+    content: "▸";
+    transition: transform .2s ease;
+    color: var(--accent);
+  }
+  .collapsible[open] > summary::before { transform: rotate(90deg); }
+  .collapsible__content {
+    height:0;
+    overflow:hidden;
+    transition: height .28s ease, padding .2s ease;
+    padding-inline:1rem;
+    padding-block-start:.5rem;
+    padding-block-end:0;
+  }
+  .collapsible[open] .collapsible__content { padding-block-end:.75rem; }
+  .collapsible .collapsible { margin-left:1rem; }
+  
+  /* TOC */
+  #toc {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: .5rem var(--side-pad) 0;
+  }
+  #toc .toc-list {
+    display:flex; flex-wrap:wrap; gap:.5rem .9rem; padding:.4rem 0 1rem;
+  }
+  #toc .toc-list a {
+    display:inline-block;
+    padding:.25rem .7rem;
+    border-radius:6px;
+    background: color-mix(in oklab, var(--box) 80%, transparent);
+    color:inherit;
+    text-decoration:none;
+    border:1px solid color-mix(in oklab, var(--ink) 15%, transparent);
+    transition: background .15s ease, color .15s ease;
+  }
+  #toc .toc-list a:hover { background: var(--accent); color:#fff; }
+  
+  /* Misc */
+  pre, code { font-family: ui-monospace, monospace; background: color-mix(in oklab, var(--box) 85%, transparent); border-radius:6px; }
+  pre { padding:.8rem; overflow:auto; }
+  .site-footer { max-width:var(--max-w); margin:0 auto; padding:1rem var(--side-pad); color:var(--ink-faint); font-size:.9rem; }
+  
