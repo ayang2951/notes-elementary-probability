@@ -103,21 +103,31 @@
   display: inline-block;
 }
 
+/* Type word (capitalized by JS) — leave a small gap before the number */
 .callout .label .callout-type {
   font-variant: normal;
-  text-transform: capitalize; /* only the type word is capitalized */
-  margin-right: .35rem;
+  text-transform: capitalize;
+  margin-right: .35rem; /* space between "Proposition" and "1.2" */
+  display: inline;      /* avoid inline-block whitespace issues */
 }
 
+/* Number — NO right margin so colon appears immediately after the number */
 .callout .label .callout-num {
-  margin-right: .3rem;
+  margin: 0;
+  padding: 0;
+  display: inline;
   font-weight: 700;
 }
 
+/* Title: begins with ": " from JS, preserve exact casing and spacing */
 .callout .label .callout-title {
+  margin: 0;
+  padding: 0;
+  display: inline;
   font-weight: 600;
-  text-transform: none;  /* keep user’s exact casing */
+  text-transform: none;
 }
+
 .callout.definition  { border-left-color: var(--def-color); 
                          background: var(--def-bkgd);
                        }
