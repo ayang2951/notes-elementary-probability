@@ -92,8 +92,31 @@
     border-radius: 6px;
     margin: 1rem 0;
   }
-  .callout .label { font-variant: small-caps; color:var(--ink-faint); font-weight:700; }
-  .callout.definition  { border-left-color: var(--def-color); 
+  /* --- Callout label: structured spans --- */
+.callout .label {
+  font-variant: normal;   /* stop small-caps */
+  text-transform: none;   /* stop auto-capitalization */
+  color: var(--ink-faint);
+  font-weight: 700;
+  display: inline-block;
+}
+
+.callout .label .callout-type {
+  font-variant: normal;
+  text-transform: capitalize; /* only the type word is capitalized */
+  margin-right: .35rem;
+}
+
+.callout .label .callout-num {
+  margin-right: .3rem;
+  font-weight: 700;
+}
+
+.callout .label .callout-title {
+  font-weight: 600;
+  text-transform: none;  /* keep user’s exact casing */
+}
+.callout.definition  { border-left-color: var(--def-color); 
                          background: var(--def-bkgd);
                        }
   .callout.theorem     { border-left-color: var(--thm-color); 
@@ -128,6 +151,7 @@
     color: var(--accent);
   }
   .collapsible[open] > summary::before { transform: rotate(90deg); }
+  /* --- Collapsible content with max-height (fixes scrollbars/formatting) --- */
   .collapsible__content {
     max-height: 0;
     overflow: hidden;
@@ -135,12 +159,17 @@
     padding-inline: 1rem;
     padding-block-start: .5rem;
     padding-block-end: 0;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
-  
-  .collapsible[open] .collapsible__content {
-    max-height: 3000px; /* big enough to fit most proofs */
-    padding-block-end: .75rem;
-  }
+
+.collapsible[open] .collapsible__content {
+  max-height: var(--collapsible-max-height, 4000px);
+  padding-block-end: .75rem;
+}
+
   
   .collapsible .collapsible { margin-left:1rem; }
   

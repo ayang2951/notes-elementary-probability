@@ -42,27 +42,37 @@ function buildToc(){
 }
 
 /* Auto-number callouts with colon */
+/* Replace existing autoNumberCallouts() with this block */
 function autoNumberCallouts(){
   document.querySelectorAll('.note-section').forEach(sec=>{
-    const secIdx = sec.dataset.sec;
+    const secIdx = sec.dataset.sec || (sec.id||'').replace(/^[^\d]*(\d+).*$/,'$1') || '0';
     const counters = {definition:0, proposition:0, lemma:0, theorem:0, remark:0, corollary:0};
+
     sec.querySelectorAll('.callout').forEach(c=>{
       for(const t in counters){
         if(c.classList.contains(t)){
           counters[t]++;
           const num = `${secIdx}.${counters[t]}`;
-          const label = c.querySelector('.label');
-          if(label){
-            const match = label.textContent.match(/^[A-Za-z]+\s*[:(]?\s*(.+)?/);
-            const customTitle = match && match[1] ? `: ${match[1].replace(/[()]/g,'').trim()}` : '';
-            label.textContent = `${capitalize(t)} ${num}${customTitle}`;
+          const labelEl = c.querySelector('.label');
+          if(labelEl){
+            let raw = labelEl.textContent.trim();
+            const afterType = raw.replace(/^[A-Za-z]+\s*[:(]?\s*/,'').trim();
+            const titlePart = afterType ? `: ${afterType}` : '';
+            const typeWord = t.charAt(0).toUpperCase() + t.slice(1);
+
+            labelEl.innerHTML =
+              `<span class="callout-type">${typeWord}</span> ` +
+              `<span class="callout-num">${num}</span>` +
+              `<span class="callout-title">${titlePart}</span>`;
           }
+          if (!c.id) c.id = `${t}-${secIdx}-${counters[t]}`;
+          break;
         }
       }
     });
   });
 }
-function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+
 
 /* Theme toggle */
 function getTheme(){ return document.documentElement.getAttribute('data-theme')||'light'; }
