@@ -37,9 +37,9 @@ Let $\Omega$ be a space and $\mathcal F_0$ be a field on $\Omega$. Then $\mathca
 
 We will introduce some intuition into why the definition is as above after the next definition, using its connection and usefulness to probability. Here, however, we note some important things to keep in mind when thinking about fields. 
 
-First, note the difference between <i>>subset of</i> and <i>>element of</i>. A field $\mathcal F_0$ defined on a space $\Omega$ is a set of sets, whose elements are subsets of the larger space $\Omega$. <i>All</i> elements in $\mathcal F_0$ are contained in the entire space, $\Omega$. $\Omega$ is itself necessarily an element of $\mathcal F_0$. 
+First, note the difference between <i>subset of</i> and <i>element of</i>. A field $\mathcal F_0$ defined on a space $\Omega$ is a set of sets, whose elements are subsets of the larger space $\Omega$. <i>All</i> elements in $\mathcal F_0$ are contained in the entire space, $\Omega$. $\Omega$ is itself necessarily an element of $\mathcal F_0$. 
 
-One of the most important facts to remember is that, a set $A \in \mathcal F_0$ <i>>does not mean</i> that subsets of $A$ must also be elements of the field.
+One of the most important facts to remember is that, a set $A \in \mathcal F_0$ <i>does not mean</i> that subsets of $A$ must also be elements of the field.
 
 We now focus our attention on a specific type of field, called a $\sigma$-field. This definition turns out to be far more versatile and important than that of the field.
 

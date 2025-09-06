@@ -86,9 +86,10 @@ function autoNumberCallouts(){
           const num = `${secIdx}.${counters[t]}`;
           const label = c.querySelector('.label');
           if(label){
-            // Extract custom title (after colon, parentheses, or space)
+            // Extract custom title after colon/parentheses/space
             const match = label.textContent.match(/^[A-Za-z]+\s*[:(]?\s*(.+)?/);
             const customTitle = match && match[1] ? `: ${match[1].replace(/[()]/g,'').trim()}` : '';
+            // Always capitalize the type word, but preserve your custom title exactly
             label.textContent = `${capitalize(t)} ${num}${customTitle}`;
           }
         }
@@ -96,6 +97,8 @@ function autoNumberCallouts(){
     });
   });
 }
+function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+
 
 
 function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
