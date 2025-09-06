@@ -61,7 +61,7 @@ function autoNumberCallouts(){
             const typeWord = t.charAt(0).toUpperCase() + t.slice(1);
 
             labelEl.innerHTML =
-              `<span class="callout-type">${typeWord}</span> ` +
+              `<span class="callout-type">${typeWord}</span>` +
               `<span class="callout-num">${num}</span>` +
               `<span class="callout-title">${titlePart}</span>`;
           }

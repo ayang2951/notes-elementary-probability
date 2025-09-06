@@ -24,13 +24,14 @@ Let $\Omega$ be a space and $\mathcal F_0$ be a field on $\Omega$. Then $\mathca
 <details class="collapsible">
   <summary>Proof</summary>
   <div class="collapsible__content">
-    By the same induction reasoning as above, it suffices to show that, for any sets $A_1, A_2 \subseteq \Omega$ such that $A_1, A_2 \in \mathcal F_0$, $A_1 \cap A_2 \in \mathcal F_0$.
 
-    By DeMorgan's laws, we have that
+By the same induction reasoning as above, it suffices to show that, for any sets $A_1, A_2 \subseteq \Omega$ such that $A_1, A_2 \in \mathcal F_0$, $A_1 \cap A_2 \in \mathcal F_0$.
 
-    $$ A_1 \cap A_2 = (A_1^c \cup A_2^c)^c. $$
+By DeMorgan's laws, we have that
 
-    Since $A_1, A_2 \in \mathcal F_0$ and $\mathcal F_0$ is closed under complementation, $A_1^c, A_2^c \in \mathcal F_0$. Since $\mathcal F_0$ is closed under finite unions, $A_1^c \cup A_2^c \in \mathcal F_0$. Again, since $\mathcal F_0$ is closed under complementation, $(A_1^c \cup A_2^c)^c = A_1 \cap A_2 \in \mathcal F_0$.
+$$ A_1 \cap A_2 = (A_1^c \cup A_2^c)^c. $$
+
+Since $A_1, A_2 \in \mathcal F_0$ and $\mathcal F_0$ is closed under complementation, $A_1^c, A_2^c \in \mathcal F_0$. Since $\mathcal F_0$ is closed under finite unions, $A_1^c \cup A_2^c \in \mathcal F_0$. Again, since $\mathcal F_0$ is closed under complementation, $(A_1^c \cup A_2^c)^c = A_1 \cap A_2 \in \mathcal F_0$.
 
   </div>
 </details>
