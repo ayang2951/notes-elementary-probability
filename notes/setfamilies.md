@@ -13,7 +13,7 @@ Let $\Omega$ be a space. A class $\mathcal{F}_0$ on $\Omega$ is called a <strong
 </ol>
 </div>
 
-The second and third properties are named _closure under complementation_ and _closure under finite unions_. The latter is not precisely what property three states, but we see is easily proved by mathematical induction for any finite number $k$ of sets.
+The second and third properties are named _closure under complementation_ and <i>closure under finite unions<i>. The latter is not precisely what property three states, but we see is easily proved by mathematical induction for any finite number $k$ of sets.
 
 Fields have a few other important properties we would like to highlight.
 
