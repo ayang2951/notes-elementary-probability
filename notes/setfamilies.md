@@ -53,7 +53,7 @@ Let $\Omega$ be a space. A class $\mathcal{F}$ on $\Omega$ is called a <strong><
 </ol>
 </div>
 
-The terminology $\sigma$ comes from the notion of properties that hold under \textit{countable} operations; we will see quite a few examples of this. Here, we again note a few important properties of $\sigma$-fields. 
+The terminology $\sigma$ comes from the notion of properties that hold under <i>countable</i> operations; we will see quite a few examples of this. Here, we again note a few important properties of $\sigma$-fields. 
 
 The first is that $\sigma$-fields are fields. They are simply a special case of fields. This is easily seen by the overlap in conditions 1 and 2, and taking the countable union of $k$ sets of interest and taking $A_{n} = \varnothing$ for any $n > k$. This is functionally the union of a finite number of sets.
 

@@ -19,8 +19,8 @@
 
     --def-bkgd: rgba(49, 49, 49, 0.09);
     --thm-bkgd: rgba(26, 39, 142, 0.09);
-    --lem-bkgd:  rgb(84, 0, 162, 0.09);
-    --prop-bkgd: rgba(30, 30, 30, 0.09);
+    --lem-bkgd:  rgba(84, 0, 162, 0.09);
+    --prop-bkgd: rgba(0, 135, 54, 0.09);
     --cor-bkgd: rgba(128, 24, 79, 0.09);
     --rmk-bkgd: rgba(39, 130, 183, 0.09);
     --ex-bkgd: rgba(123, 255, 0, 0.09);
