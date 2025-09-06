@@ -64,7 +64,7 @@ For now, we just provide an example of a field that is not a $\sigma$-field.
 <div class="callout example"><span class="label">Example: The Class of Finite and Co-Finite Sets is a Field but not a $\sigma$-Field</span><br/>
 Let $\Omega = \mathbb N$, the set of natural numbers. Consider the family of sets
 
-$$ \mathcal F_0 = \{A: |A| < \infty \text{ or } |A^c| < \infty\}, $$
+$$ \mathcal F_0 = {A: |A| < \infty \text{ or } |A^c| < \infty}, $$
 
 i.e. the sets that are finite or co-finite. We show that this set is a field but not a $\sigma$-field.
 
