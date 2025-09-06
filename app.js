@@ -1,9 +1,4 @@
-/* app.js – unified version
-   ✔ allows raw HTML in Markdown
-   ✔ smooth nested collapsibles
-   ✔ auto-number callouts per section
-   ✔ theme toggle
-*/
+/* app.js – with max-height collapsibles + auto-numbering */
 
 marked.setOptions({ gfm:true, mangle:false, headerIds:false });
 
@@ -38,7 +33,6 @@ async function loadAll(){
   if(window.MathJax?.typesetPromise){ await MathJax.typesetPromise([contentEl()]); }
 
   buildToc();
-  initCollapsibles();
   autoNumberCallouts();
 }
 
@@ -47,34 +41,7 @@ function buildToc(){
   tocEl().innerHTML = `<div class="toc-list">${secs.map(h=>`<a href="#${h.parentElement.id}">${h.textContent}</a>`).join('')}</div>`;
 }
 
-/* Collapsible logic */
-function initCollapsibles(){
-  document.querySelectorAll('details.collapsible').forEach(d=>{
-    let inner = d.querySelector('.collapsible__content');
-    if(!inner){
-      inner = document.createElement('div');
-      inner.className='collapsible__content';
-      Array.from(d.childNodes).forEach(n=>{
-        if(!(n.tagName && n.tagName.toLowerCase()==='summary')) inner.appendChild(n);
-      });
-      d.appendChild(inner);
-    }
-    if(d.open){ inner.style.height='auto'; }
-    else { inner.style.height='0px'; }
-
-    d.addEventListener('toggle',()=>{
-      if(d.open){
-        inner.style.height=inner.scrollHeight+'px';
-        inner.addEventListener('transitionend',function h(){ inner.style.height='auto'; inner.removeEventListener('transitionend',h); });
-      } else {
-        inner.style.height=inner.scrollHeight+'px';
-        requestAnimationFrame(()=>inner.style.height='0px');
-      }
-    });
-  });
-}
-
-/* Number callouts */
+/* Auto-number callouts with colon */
 function autoNumberCallouts(){
   document.querySelectorAll('.note-section').forEach(sec=>{
     const secIdx = sec.dataset.sec;
@@ -86,10 +53,8 @@ function autoNumberCallouts(){
           const num = `${secIdx}.${counters[t]}`;
           const label = c.querySelector('.label');
           if(label){
-            // Extract custom title after colon/parentheses/space
             const match = label.textContent.match(/^[A-Za-z]+\s*[:(]?\s*(.+)?/);
             const customTitle = match && match[1] ? `: ${match[1].replace(/[()]/g,'').trim()}` : '';
-            // Always capitalize the type word, but preserve your custom title exactly
             label.textContent = `${capitalize(t)} ${num}${customTitle}`;
           }
         }
@@ -97,10 +62,6 @@ function autoNumberCallouts(){
     });
   });
 }
-function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
-
-
-
 function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
 
 /* Theme toggle */

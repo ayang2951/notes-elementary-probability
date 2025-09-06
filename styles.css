@@ -129,14 +129,19 @@
   }
   .collapsible[open] > summary::before { transform: rotate(90deg); }
   .collapsible__content {
-    height:0;
-    overflow:hidden;
-    transition: height .28s ease, padding .2s ease;
-    padding-inline:1rem;
-    padding-block-start:.5rem;
-    padding-block-end:0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease, padding .2s ease;
+    padding-inline: 1rem;
+    padding-block-start: .5rem;
+    padding-block-end: 0;
   }
-  .collapsible[open] .collapsible__content { padding-block-end:.75rem; }
+  
+  .collapsible[open] .collapsible__content {
+    max-height: 3000px; /* big enough to fit most proofs */
+    padding-block-end: .75rem;
+  }
+  
   .collapsible .collapsible { margin-left:1rem; }
   
   /* TOC */
