@@ -133,7 +133,7 @@
                          background: var(--rmk-bkgd);
                        }
   .callout.example     { border-left-color: var(--ex-color); 
-                        background: var(--ex-bkgd);
+                         background: var(--ex-bkgd);
                        }
   /* Collapsibles */
   .collapsible {
