@@ -61,20 +61,20 @@ The second is that, although $\sigma$-fields are fields, they are <i>much much l
 
 For now, we just provide an example of a field that is not a $\sigma$-field.
 
-<div class="callout example"><span class="label">Example: The Class of Finite and Co-Finite Sets is a Field, not a $\sigma$-Field</span><br/>
-Let $\Omega = \N$, the set of natural numbers. Consider the family of sets
+<div class="callout example"><span class="label">Example: The Class of Finite and Co-Finite Sets is a Field but not a $\sigma$-Field</span><br/>
+Let $\Omega = \mathbb N$, the set of natural numbers. Consider the family of sets
 
-$$ \F_0 = \{A: |A| < \infty \text{ or } |A^c| < \infty\}, $$
+$$ \mathcal F_0 = \{A: |A| < \infty \text{ or } |A^c| < \infty\}, $$
 
 i.e. the sets that are finite or co-finite. We show that this set is a field but not a $\sigma$-field.
 
 We first verify that this is a field.
 <ol type="i">
     <li>$\Omega^c = \varnothing$ has cardinality 0, clearly finite, so $\Omega$ is co-finite.</li>
-    <li>Let $A \in \F_0$. Then either $|A| < \infty$ or $|A^c| < \infty$. Then, clearly, $A^c \in \F_0$.</li>
-    <li>Suppose $A_1, A_2\in \F_0$. Suppose first that $|A_1|, |A_2| < \infty$. Then $|A_1 \cup A_2| < \infty$, so $A_1 \cup A_2 \in \F_0$. Now suppose that at least one of the sets is co-finite---without loss of generality, suppose it is $A_1$. Then $(A_1 \cup A_2)^c \subseteq A_1^c$, so $|(A_1 \cup A_2)^c| \leq |A_1^c| < \infty$, so $A_1 \cup A_2$ must be co-finite.</li>
+    <li>Let $A \in \mathcal F_0$. Then either $|A| < \infty$ or $|A^c| < \infty$. Then, clearly, $A^c \in \mathcal F_0$.</li>
+    <li>Suppose $A_1, A_2\in \mathcal F_0$. Suppose first that $|A_1|, |A_2| < \infty$. Then $|A_1 \cup A_2| < \infty$, so $A_1 \cup A_2 \in \F_0$. Now suppose that at least one of the sets is co-finite---without loss of generality, suppose it is $A_1$. Then $(A_1 \cup A_2)^c \subseteq A_1^c$, so $|(A_1 \cup A_2)^c| \leq |A_1^c| < \infty$, so $A_1 \cup A_2$ must be co-finite.</li>
 </ol>
-Now we show that $\mathcal F_0$ is not a $\sigma$-field. Consider a countably infinite number of distinct <i>singletons</i>---sets containing only one element each from the space---whose union is also countably infinite, e.g. the set of even numbers. This set is itself not finite, but it is also not co-finite: its complement, the set of odd numbers, is also countably infinite.
+Now we show that $\mathcal F_0$ is not a $\sigma$-field. Consider a countably infinite number of distinct <i>singletons</i>-sets containing only one element each from the space-whose union is also countably infinite, e.g. the set of even numbers. This set is itself not finite, but it is also not co-finite: its complement, the set of odd numbers, is also countably infinite.
 
 Thus, the family of finite and co-finite subsets of the natural numbers is a field, but not a $\sigma$-field.
 

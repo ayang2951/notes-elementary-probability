@@ -132,7 +132,7 @@
   .callout.remark      { border-left-color: var(--rmk-color); 
                          background: var(--rmk-bkgd);
                        }
-  .callout.remark      { border-left-color: var(--ex-color); 
+  .callout.example     { border-left-color: var(--ex-color); 
                         background: var(--ex-bkgd);
                        }
   /* Collapsibles */
