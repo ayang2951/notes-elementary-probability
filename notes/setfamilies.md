@@ -4,7 +4,7 @@
 
 We will introduce one of the most critical definitions in measure theory, one that is the first bit of scaffolding upon which measure theory is built. For completeness' sake, however, we first introduce a related definition.
 
-<div class="callout definition"><span class="label">Definition</span><br/>
+<div class="callout definition"><span class="label">Definition: Field</span><br/>
 Let $\Omega$ be a space. A class $\mathcal{F}_0$ on $\Omega$ is called a <strong><em>field</strong></em> or an <strong><em>algebra</strong></em> if the following properties hold:
 <ol type="i">
   <li>$\Omega \in \mathcal F_0$.</li>
@@ -19,16 +19,14 @@ Fields have a few other important properties we would like to highlight.
 
 <div class="callout proposition"><span class="label">Proposition</span><br/>
 Let $\Omega$ be a space and $\mathcal F_0$ be a field on $\Omega$. Then $\mathcal F_0$ is _closed under finite intersections_.
-<div class="collapsible__content">
-    If $0\le f_n \uparrow f$ then $\int f_n \to \int f$.
-    <details class="collapsible">
-      <summary>sub collapsible template</summary>
-      <div class="collapsible__content">
-        text text
-      </div>
-    </details>
-  </div>
 </div>
+<details class="collapsible">
+  <summary>Proof</summary>
+  <div class="collapsible__content">
+    proof.
+
+  </div>
+</details>
 
 Now, we may focus our attention on the following definition, which is a specific case of the previous one, but many times more useful.
 
