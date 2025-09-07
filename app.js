@@ -86,35 +86,127 @@ document.addEventListener('DOMContentLoaded',()=>{
   loadAll();
 });
 
-/* Add bookmark buttons */
 function addBookmarkButtons(){
-  const blocks = document.querySelectorAll('p, .callout, h2, h3'); // choose elements
+  const blocks = document.querySelectorAll('p, .callout, h2, h3');
   blocks.forEach((el, idx) => {
     if(!el.id) el.id = 'block-' + idx;
     el.classList.add('bookmarkable');
 
+    // Add 🔖 button to each block
     const btn = document.createElement('button');
     btn.textContent = '🔖';
     btn.className = 'bookmark-btn';
-    btn.title = 'Bookmark this location';
+    btn.title = 'Toggle bookmark';
 
-    btn.addEventListener('click', () => {
-      localStorage.setItem('lastVisitedId', el.id);
-      document.querySelectorAll('.bookmarkable').forEach(b => b.classList.remove('bookmarked'));
-      el.classList.add('bookmarked');
-      alert('📌 Bookmark saved at ' + el.id);
-    });
-
+    btn.addEventListener('click', () => toggleBookmark(el.id));
     el.appendChild(btn);
   });
 
-  // Restore on reload
-  const lastId = localStorage.getItem('lastVisitedId');
-  if(lastId){
-    const el = document.getElementById(lastId);
-    if(el){
+  // Restore visual state
+  renderBookmarks();
+}
+
+/* --- Bookmark helpers --- */
+function getBookmarks(){
+  return JSON.parse(localStorage.getItem('bookmarks') || '[]');
+}
+function saveBookmarks(arr){
+  localStorage.setItem('bookmarks', JSON.stringify(arr));
+}
+function toggleBookmark(id){
+  let bookmarks = getBookmarks();
+  if(bookmarks.includes(id)){
+    bookmarks = bookmarks.filter(b => b !== id);
+  } else {
+    bookmarks.push(id);
+  }
+  saveBookmarks(bookmarks);
+  renderBookmarks();
+}
+function removeBookmark(id){
+  let bookmarks = getBookmarks().filter(b => b !== id);
+  saveBookmarks(bookmarks);
+  renderBookmarks();
+}
+
+/* --- Render bookmarks list + highlight in text --- */
+function renderBookmarks(){
+  const bookmarks = getBookmarks();
+
+  // Highlight in text
+  document.querySelectorAll('.bookmarkable').forEach(el => {
+    if(bookmarks.includes(el.id)){
       el.classList.add('bookmarked');
-      el.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      el.classList.remove('bookmarked');
     }
+  });
+
+  // Build list
+  const list = document.getElementById('bookmarkList');
+  if(list){
+    list.innerHTML = '';
+    bookmarks.forEach(id => {
+      const el = document.getElementById(id);
+      if(!el) return;
+      const li = document.createElement('li');
+
+      const link = document.createElement('a');
+      link.href = '#' + id;
+      // Find the nearest section title
+      let section = el.closest('section');
+      let heading = section ? section.querySelector('h1') : null;
+      let displayText = '(Untitled)';
+
+      // If it's a callout (proposition/lemma/theorem/etc.), use its label
+      if (el.classList.contains('callout')) {
+        const label = el.querySelector('.label');
+        if (label) {
+          displayText = label.textContent;
+        }
+      } else {
+        // Otherwise, find nearest heading (h1/h2/h3)
+        let heading = null;
+        let prev = el;
+        while (prev && !['H1','H2','H3'].includes(prev.tagName)) {
+          prev = prev.previousElementSibling;
+        }
+        if (prev && ['H1','H2','H3'].includes(prev.tagName)) {
+          heading = prev;
+        } else {
+          heading = el.closest('section')?.querySelector('h1');
+        }
+        if (heading) {
+          displayText = heading.textContent;
+        }
+      }
+
+      link.textContent = displayText;
+
+
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+
+      const rm = document.createElement('button');
+      rm.textContent = '❌';
+      rm.addEventListener('click', () => removeBookmark(id));
+
+      li.appendChild(link);
+      li.appendChild(rm);
+      list.appendChild(li);
+    });
   }
 }
+
+/* --- Panel toggle --- */
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggleBookmarks');
+  const panel = document.getElementById('bookmarkPanel');
+  if(toggleBtn && panel){
+    toggleBtn.addEventListener('click', () => {
+      panel.style.display = (panel.style.display === 'block' ? 'none' : 'block');
+    });
+  }
+});

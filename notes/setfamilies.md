@@ -7,6 +7,7 @@ In this section, we will introduce one of the most critical definitions in measu
 
 
 <div class="callout definition"><span class="label">Definition: Field</span><br/>
+<hr style="height:0.01px; visibility:hidden;" />
 Let $\Omega$ be a space. A class $\mathcal{F}_0$ on $\Omega$ is called a <strong><em>field</strong></em> or an <strong><em>algebra</strong></em> if the following properties hold:
 <ol type="i">
   <li>$\Omega \in \mathcal F_0$.</li>
@@ -24,6 +25,7 @@ Fields have a few other important properties we would like to highlight.
 
 
 <div class="callout proposition"><span class="label">Proposition: Fields are Closed Under Finite Intersections</span><br/>
+<hr style="height:0.01px; visibility:hidden;" />
 Let $\Omega$ be a space and $\mathcal F_0$ be a field on $\Omega$. Then $\mathcal F_0$ is <i>closed under finite intersections</i>.
 </div>
 
@@ -32,15 +34,11 @@ Let $\Omega$ be a space and $\mathcal F_0$ be a field on $\Omega$. Then $\mathca
 <details class="collapsible">
   <summary>Proof</summary>
   <div class="collapsible__content">
-
   By the same induction reasoning as above, it suffices to show that, for any sets $A_1, A_2 \in \mathcal F_0$, $A_1 \cap A_2 \in \mathcal F_0$.
 
   By DeMorgan's laws, we have that
-
   $$ A_1 \cap A_2 = (A_1^c \cup A_2^c)^c. $$
-
   Since $A_1, A_2 \in \mathcal F_0$ and $\mathcal F_0$ is closed under complementation, $A_1^c, A_2^c \in \mathcal F_0$. Since $\mathcal F_0$ is closed under finite unions, $A_1^c \cup A_2^c \in \mathcal F_0$. Again, since $\mathcal F_0$ is closed under complementation, $(A_1^c \cup A_2^c)^c = A_1 \cap A_2 \in \mathcal F_0$.
-
   </div>
 </details>
 
@@ -57,6 +55,7 @@ We now focus our attention on a specific type of field, called a $\sigma$-field.
 
 
 <div class="callout definition"><span class="label">Definition: $\sigma$-Field</span><br/>
+<hr style="height:0.01px; visibility:hidden;" />
 Let $\Omega$ be a space. A class $\mathcal{F}$ on $\Omega$ is called a <strong><em>$\sigma$-field</strong></em> or a <strong><em>$\sigma$-algebra</strong></em> if the following properties hold:
 <ol type="i">
   <li>$\Omega \in \mathcal F$.</li>
@@ -78,15 +77,12 @@ For now, we just provide an example of a field that is not a $\sigma$-field.
 
 
 <div class="callout example"><span class="label">Example: The Class of Finite and Co-Finite Sets is a Field but not a $\sigma$-Field</span><br/>
-
+<hr style="height:0.01px; visibility:hidden;" />
 Let $\Omega = \mathbb N$, the set of natural numbers. Consider the family of sets
-
 $$ \mathcal F_0 = \\{ A: |A| < \infty \text{ or } |A^c| < \infty \\}, $$
-
 i.e. the sets that are finite or co-finite. This set is a field but not a $\sigma$-field.
 
 We note that even for different spaces, i.e. even if $\Omega \neq \mathbb N$, this still holds. We use the set of natural numbers for simplicity and concreteness. However, one thing of note is that $\mathcal F_0$ is not a $\sigma$-field only if $\Omega$ is infinite.
-
 </div>
 
 
@@ -94,17 +90,15 @@ We note that even for different spaces, i.e. even if $\Omega \neq \mathbb N$, th
 <details class="collapsible">
   <summary>Proof</summary>
   <div class="collapsible__content">
-
   We first verify that this is a field.
   <ol type="i">
       <li>$\Omega^c = \varnothing$ has cardinality 0, clearly finite, so $\Omega$ is co-finite.</li>
       <li>Let $A \in \mathcal F_0$. Then either $|A| < \infty$ or $|A^c| < \infty$. Then, clearly, $A^c \in \mathcal F_0$.</li>
-      <li>Suppose $A_1, A_2\in \mathcal F_0$. Suppose first that $|A_1|, |A_2| < \infty$. Then $|A_1 \cup A_2| < \infty$, so $A_1 \cup A_2 \in \mathcal F_0$. Now suppose that at least one of the sets is co-finite---without loss of generality, suppose it is $A_1$. Then $(A_1 \cup A_2)^c \subseteq A_1^c$, so $|(A_1 \cup A_2)^c| \leq |A_1^c| < \infty$, so $A_1 \cup A_2$ must be co-finite.</li>
+      <li>Suppose $A_1, A_2\in \mathcal F_0$. Suppose first that $|A_1|, |A_2| < \infty$. Then $|A_1 \cup A_2| < \infty$, so $A_1 \cup A_2 \in \mathcal F_0$. Now suppose that at least one of the sets is co-finite&mdash;without loss of generality, suppose it is $A_1$. Then $(A_1 \cup A_2)^c \subseteq A_1^c$, so $|(A_1 \cup A_2)^c| \leq |A_1^c| < \infty$, so $A_1 \cup A_2$ must be co-finite.</li>
   </ol>
   Now we show that $\mathcal F_0$ is not a $\sigma$-field. Consider a countably infinite number of distinct <i>singletons</i>&mdash;sets containing only one element each from the space&mdash;whose union is also countably infinite, e.g. the set of even numbers. This set is itself not finite, but it is also not co-finite: its complement, the set of odd numbers, is also countably infinite. Clearly, however, this argument does not apply if $\Omega$ is finite.
 
   Thus, the family of finite and co-finite subsets of the natural numbers is a field, but not a $\sigma$-field.
-
   </div>
 </details>
 
@@ -115,13 +109,10 @@ We now present another, similar example, one that <i>is</i> a $\sigma$-field.
 
 
 <div class="callout example"><span class="label">Example: The Class of Countable and Co-Countable Sets is $\sigma$-Field</span><br/>
-
+<hr style="height:0.01px; visibility:hidden;" />
 Let $\Omega = \mathbb N$, the set of natural numbers. Consider the family of sets
-
 $$ \mathcal F_0 = \\{ A: A \text{ is countable or } A^c \text{ is countable} \\}, $$
-
 i.e. the sets that are countable or co-countable. This set is a $\sigma$-field.
-
 </div>
 
 
@@ -129,23 +120,20 @@ i.e. the sets that are countable or co-countable. This set is a $\sigma$-field.
 <details class="collapsible">
   <summary>Proof</summary>
   <div class="collapsible__content">
-
   We verify the three conditions.
   <ol type="i">
       <li>As before, $\Omega^c = \varnothing$ is clearly countable. Thus, $\Omega \in \mathcal F$.</li>
       <li>Suppose that $A \in \mathcal F$. Then either $A$ or $A^c$ is countable. Thus, $A^c \in \mathcal F$.</li>
       <li>Suppose $A_n \in \mathcal F$ for $n \in \mathbb N$. Suppose first that $A_n$ is countable for all $n \in \mathbb N$. Then, because the countable union of countable elements is countable, $\bigcup_{n = 1}^\infty A_n \in \mathcal F$. Now suppose that there exists some $A_k$ that is co-countable. Then $\left(\bigcup_{n = 1}^\infty A_n \right)^c \subseteq A_k^c$, which is countable, and the countable union $\bigcup_{n = 1}^\infty A_n \in \mathcal F$.</li>
   </ol>
-
   </div>
 </details>
 
 
 
 <div class="callout proposition"><span class="label">Proposition: The Intersection of $\sigma$-Fields is a $\sigma$-Field, but not the Union </span><br/>
-
+<hr style="height:0.01px; visibility:hidden;" />
 Let $\Omega$ be a space, and let $\mathcal F_1$ and $\mathcal F_2$ be $\sigma$-fields on the space. We show that $\mathcal F_1 \cap \mathcal F_2$ is a $\sigma$-field. Contrarily, we show that the union of two $\sigma$-fields, $\mathcal F_1 \cup \mathcal F_2$, is not necessarily a $\sigma$-field.
-
 </div>
 
 
@@ -153,7 +141,6 @@ Let $\Omega$ be a space, and let $\mathcal F_1$ and $\mathcal F_2$ be $\sigma$-f
 <details class="collapsible">
   <summary>Proof</summary>
   <div class="collapsible__content">
-
   We show that $\mathcal F_1 \cap \mathcal F_2$ is a $\sigma$-field.   
   <ol type="i">
     <li>$\Omega \in \mathcal F_1, \mathcal F_2$ means that $\Omega \in \mathcal F_1 \cap \mathcal F_2$.</li>
@@ -167,7 +154,6 @@ Let $\Omega$ be a space, and let $\mathcal F_1$ and $\mathcal F_2$ be $\sigma$-f
   Let $\mathcal F_1 = \{\varnothing, A, A^c \Omega\}$, and let $\mathcal F_2 = \{\varnothing, B, B^c, \Omega\}$.
 
   Then $\mathcal F_1 \cup \mathcal F_2 = \{\varnothing, A, B, A^c, B^c, \Omega\}$. However, $A \cup B \notin \mathcal F_1 \cup \mathcal F_2$, so $\mathcal F_1 \cup \mathcal F_2$ is not closed under unions, and hence not a $\sigma$-field.
-
   </div>
 </details>
 
@@ -178,9 +164,8 @@ There are two $\sigma$-fields on a space that come "for free" with the space $\O
 
 
 <div class="callout definition"><span class="label">Definition: Trivial $\sigma$-Field</span><br/>
-
+<hr style="height:0.01px; visibility:hidden;" />
 Let $\Omega$ be a space. The $\sigma$-field defined by $\mathcal F = \\{\varnothing, \Omega\\}$ is called the <strong><em>trivial $\sigma$-field</strong></em>.
-
 </div>
 
 
