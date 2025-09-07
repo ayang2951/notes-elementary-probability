@@ -34,6 +34,7 @@ async function loadAll(){
 
   buildToc();
   autoNumberCallouts();
+  addBookmarkButtons();
 }
 
 function buildToc(){
@@ -84,3 +85,36 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(btn){ setTheme(getTheme(),btn); btn.addEventListener('click',()=>setTheme(getTheme()==='dark'?'light':'dark',btn)); }
   loadAll();
 });
+
+/* Add bookmark buttons */
+function addBookmarkButtons(){
+  const blocks = document.querySelectorAll('p, .callout, h2, h3'); // choose elements
+  blocks.forEach((el, idx) => {
+    if(!el.id) el.id = 'block-' + idx;
+    el.classList.add('bookmarkable');
+
+    const btn = document.createElement('button');
+    btn.textContent = '🔖';
+    btn.className = 'bookmark-btn';
+    btn.title = 'Bookmark this location';
+
+    btn.addEventListener('click', () => {
+      localStorage.setItem('lastVisitedId', el.id);
+      document.querySelectorAll('.bookmarkable').forEach(b => b.classList.remove('bookmarked'));
+      el.classList.add('bookmarked');
+      alert('📌 Bookmark saved at ' + el.id);
+    });
+
+    el.appendChild(btn);
+  });
+
+  // Restore on reload
+  const lastId = localStorage.getItem('lastVisitedId');
+  if(lastId){
+    const el = document.getElementById(lastId);
+    if(el){
+      el.classList.add('bookmarked');
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+}
