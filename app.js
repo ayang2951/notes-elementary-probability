@@ -46,7 +46,7 @@ function buildToc(){
 function autoNumberCallouts(){
   document.querySelectorAll('.note-section').forEach(sec=>{
     const secIdx = sec.dataset.sec || (sec.id||'').replace(/^[^\d]*(\d+).*$/,'$1') || '0';
-    const counters = {definition:0, proposition:0, lemma:0, theorem:0, remark:0, corollary:0};
+    const counters = {definition:0, proposition:0, lemma:0, theorem:0, remark:0, corollary:0, example:0};
 
     sec.querySelectorAll('.callout').forEach(c=>{
       for(const t in counters){
@@ -61,10 +61,11 @@ function autoNumberCallouts(){
             const typeWord = t.charAt(0).toUpperCase() + t.slice(1);
 
             labelEl.innerHTML =
-              '<span class="callout-type">' + typeWord + '</span>' +
+              '<span class="callout-type">' + typeWord + '</span> ' +
               '<span class="callout-num">' + num + '</span>' +
               '<span class="callout-title">' + titlePart + '</span>';
           }
+          
           if (!c.id) c.id = `${t}-${secIdx}-${counters[t]}`;
           break;
         }
