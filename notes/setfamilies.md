@@ -1,4 +1,4 @@
-> _Overview: We introduce a few critical set families, including fields, σ-fields, and π & λ systems._
+_Overview: We introduce a few critical set families, including fields, σ-fields, and π & λ systems._
 
 ## Fields and $\sigma$-Fields
 

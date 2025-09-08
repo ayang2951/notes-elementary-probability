@@ -1,6 +1,6 @@
 ## Modes of Convergence
 
-<div class="callout theorem"><span class="label">convergence almost surely</span><br/>
+<div class="callout theorem"><span class="label">Theorem: convergence almost surely</span><br/>
 text text
 </div>
 
