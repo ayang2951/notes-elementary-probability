@@ -315,3 +315,20 @@
   }
   .bookmark-item a:hover { text-decoration:underline; }
   
+  /* Ensure consistent spacing inside callouts */
+.callout > *:last-child {
+  margin-bottom: 0 !important; /* remove trailing margins */
+  padding-bottom: 0 !important;
+}
+
+/* Add uniform internal padding at the bottom */
+.callout {
+  padding-bottom: 1.5rem; /* adjust value to taste */
+}
+
+
+/* Add more spacing between list items */
+ul li,
+ol li {
+  margin-bottom: 0.5rem; /* adjust value for spacing */
+}
